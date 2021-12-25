@@ -6,6 +6,7 @@ class Babies {
   });
 
   Future<int> getBabies() async {
+    print('Future<int> getBabies()');
     await Future.delayed(Duration(seconds: 3));
 
     if (age > 1 && age < 5) {

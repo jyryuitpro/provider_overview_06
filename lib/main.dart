@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         FutureProvider<int>(
           initialData: 0,
           create: (context) {
+            print('FutureProvider<int>');
             final int dogAge = context.read<Dog>().age;
             final babies = Babies(age: dogAge);
             return babies.getBabies();
@@ -108,6 +109,7 @@ class Age extends StatelessWidget {
         ),
         Text(
           '- number of babies: ${context.watch<int>()}',
+          // '- number of babies: ${context.read<int>()}',
           style: TextStyle(fontSize: 20.0),
         ),
         SizedBox(
